@@ -32,7 +32,8 @@ class SearchZipCodePage {
    * @param { String } params.type - Enter the type of ZIP code: Locality/Street, Promotional ZIP Code, Community Post Office Box, Large User, Operational Unit or All.
    */
   async searchAddress(params: SearchAddressParams) {
-    const {page, addressOrZipCode, type} = params
+    const { page, addressOrZipCode, type } = params
+
     // Expected value
     const address = {
       street: "Rua Miranda Leão" + type !== 'Grande Usuário' ? '' : ', 41Lojas Bemol',
@@ -46,8 +47,8 @@ class SearchZipCodePage {
     await page.locator('button').filter({ hasText: "Buscar" }).click()
 
     // Compare the search value with the expected result.
-    const resultSelector: any = await page.waitForSelector(this.pageTitleResult, {state: 'visible'})
-    const resultText = await page.locator(resultSelector).textContent()
+    await page.waitForSelector(this.pageTitleResult, { state: 'visible' })
+    const resultText: string = await page.locator(this.pageTitleResult).textContent()
 
     expect(resultText).toContain('Resultado da Busca por Endereço ou CEP')
 
@@ -56,10 +57,11 @@ class SearchZipCodePage {
       { field: street, index: 0 },
       { field: neighborhood, index: 1 },
       { field: locality, index: 2 },
-      { field: zipCode, index: 3 }];
+      { field: zipCode, index: 3 }
+    ];
 
-    for (const {field, index} of searchResult) {
-      const result = await page.locator('tbody').locator('tr').locator('td').nth(index).textContent()
+    for (const { field, index } of searchResult) {
+      const result: string = await page.locator('tbody').locator('tr').locator('td').nth(index).textContent()
       expect(result).toContain(field)
     }
   }

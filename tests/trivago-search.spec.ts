@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import {test, expect, Locator} from '@playwright/test';
 import TrivagoSearchPage from "../page-objects/trivago-search.page";
 
 const trivagoSearch: TrivagoSearchPage = new TrivagoSearchPage()
@@ -12,19 +12,23 @@ test.describe('Challenge II', () => {
     const hotelInfo = { name: '', price: '', review: '' };
 
     // Type and select the value “Manaus” in the search field
-    await page.locator(trivagoSearch.searchField).first().fill('Manaus');
-    await page.locator(trivagoSearch.searchField).first().press('Enter');
+    const searchField: Locator = page.locator(trivagoSearch.searchField).first();
+    await searchField.fill('Manaus');
+    await searchField.press('Enter');
+
     await page.waitForTimeout(500)
-    await expect(page.locator(trivagoSearch.suggestionList)).toBeVisible();
-    const suggestionList = page.locator(trivagoSearch.suggestionList);
+
+    const suggestionList: Locator = page.locator(trivagoSearch.suggestionList);
+    await expect(suggestionList).toBeVisible();
     await page.waitForTimeout(1000)
     await suggestionList.filter({ hasText: 'Manaus' }).first().click();
     await trivagoSearch.selectDate({ page, isCheckoutDate: false });
     await page.locator('body').click(); // Click outside the search field to close the list of suggestions
 
     // Click the search button and wait for the API response
-    await page.locator(trivagoSearch.searchButton).focus();
-    await page.locator(trivagoSearch.searchButton).click();
+    const searchButton: Locator = page.locator(trivagoSearch.searchButton);
+    await searchButton.focus();
+    await searchButton.click();
     const accommodationSearch = await page.waitForResponse('https://www.trivago.com.br/graphql?accommodationSearchQuery');
     const response: any = accommodationSearch.json();
     expect(response.statusCode).toBe(200);
@@ -33,11 +37,12 @@ test.describe('Challenge II', () => {
     await page.waitForResponse('https://www.trivago.com.br/graphql?LogPriceImpression');
 
     // Sort results by rating and suggestions
-    await expect(page.locator(trivagoSearch.sortBy)).toBeVisible();
-    await page.locator(trivagoSearch.sortBy).locator('select').selectOption({ label: 'Avaliação e sugestões' });
+    const sortByButton: Locator = page.locator(trivagoSearch.sortBy);
+    await expect(sortByButton).toBeVisible();
+    await sortByButton.locator('select').selectOption({ label: 'Avaliação e sugestões' });
 
     // Get the information of the first hotel
-    const hotelInfoSelector = page.locator(trivagoSearch.hotelInfo).first();
+    const hotelInfoSelector: Locator = page.locator(trivagoSearch.hotelInfo).first();
     hotelInfo.name = await hotelInfoSelector.locator(trivagoSearch.hotelName).innerText();
     hotelInfo.review = await hotelInfoSelector.locator(trivagoSearch.hotelReview).innerText();
     const price: string = await hotelInfoSelector.locator(trivagoSearch.recommendedPrice).innerText();
