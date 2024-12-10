@@ -9,7 +9,7 @@ test.describe('Challenge II', () => {
   });
 
   test('You must search for "Manaus" and click on the first result', async ({ page }) => {
-    const hotelInfo = { name: '', price: '', review: '' };
+    const hotelInfo: { name: string, price: string, review: string } = { name: '', price: '', review: '' };
 
     // Type and select the value “Manaus” in the search field
     const searchField: Locator = page.locator(trivagoSearch.searchField).first();

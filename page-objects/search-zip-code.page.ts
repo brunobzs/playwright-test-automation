@@ -35,7 +35,7 @@ class SearchZipCodePage {
     const { page, addressOrZipCode, type } = params
 
     // Expected value
-    const address = {
+    const address: { street: string, neighborhood: string, locality: string, zipCode: string } = {
       street: "Rua Miranda Leão" + type !== 'Grande Usuário' ? '' : ', 41Lojas Bemol',
       neighborhood: 'Centro',
       locality: 'Manaus/AM',
@@ -53,7 +53,7 @@ class SearchZipCodePage {
     expect(resultText).toContain('Resultado da Busca por Endereço ou CEP')
 
     const {street, neighborhood, locality, zipCode} = address
-    const searchResult = [
+    const searchResult: { field: string, index: number }[] = [
       { field: street, index: 0 },
       { field: neighborhood, index: 1 },
       { field: locality, index: 2 },
