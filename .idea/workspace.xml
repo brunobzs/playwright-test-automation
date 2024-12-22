@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page-objects/search-zip-code.page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page-objects/trivago-search.page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-examples/demo-todo-app.spec.ts" beforeDir="false" />
-    </list>
+    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Create login tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,12 +31,12 @@
     &quot;assignee&quot;: &quot;brunobzs&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:brunobzs/playwright-automation-tests.git",
-    "accountId": "6daaad1d-f4b0-4209-82cb-04e36882fe46"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:brunobzs/playwright-automation-tests.git&quot;,
+    &quot;accountId&quot;: &quot;6daaad1d-f4b0-4209-82cb-04e36882fe46&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -49,9 +48,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Playwright.Authentication Test.Registering a new user.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-project&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/Projetos/playwright-automation-tests&quot;,
@@ -62,10 +62,30 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\Aqua 2024.3\\plugins\\javascript-base\\jsLanguageServicesImpl\\external&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\Aqua 2024.3.1\\plugins\\javascript-base\\jsLanguageServicesImpl\\external&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Authentication Test.Registering a new user" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/login.spec.ts" />
+      <test-names>
+        <test-name value="Authentication Test" />
+        <test-name value="Registering a new user" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Playwright.Authentication Test.Registering a new user" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,6 +95,31 @@
       <option name="presentableId" value="Default" />
       <updated>1733094897618</updated>
     </task>
+    <task id="LOCAL-00001" summary="Reorganize folders">
+      <option name="closed" value="true" />
+      <created>1734728906492</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734728906492</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Create login tests">
+      <option name="closed" value="true" />
+      <created>1734828574233</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734828574233</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create login tests">
+      <option name="closed" value="true" />
+      <created>1734828587311</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1734828587311</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +147,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reorganize folders" />
+    <MESSAGE value="Create login tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create login tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
