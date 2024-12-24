@@ -49,7 +49,7 @@ class LoginPage {
    * @param {Page} params.page - Playwright page object
    */
   async accessWebpage({ page }: { page: Page }) {
-    const baseURL = config.use?.baseURL;
+    const baseURL: string = config.use?.baseURL;
 
     await page.goto(baseURL);
   }
