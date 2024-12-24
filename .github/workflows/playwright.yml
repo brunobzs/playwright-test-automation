@@ -1,0 +1,33 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Configure Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22 # Escolha a versão do Node.js necessária para o Playwright
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Install Playwright Browsers
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      # Step 5: Run the tests
+      - name: Run Playwright tests
+        run: npm test
