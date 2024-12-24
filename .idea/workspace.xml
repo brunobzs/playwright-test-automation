@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Create login tests">
-      <change afterPath="$PROJECT_DIR$/tests/seach-products.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page-objects/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/page-objects/login.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page-objects/product-details.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/page-objects/product-details.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page-objects/search-product.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/page-objects/search-product.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/playwright.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/product-details.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/product-details.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +60,10 @@
     "Playwright.Search Products Test.Search without results.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "new-project",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Bruno/Projetos/idelsoft-test-automation",
+    "last_opened_file_path": "C:/Users/Bruno/Projetos/playwright-automation-tests",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -79,6 +75,11 @@
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\Aqua 2024.3.1\\plugins\\javascript-base\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bruno\Projetos\playwright-automation-tests" />
+    </key>
+  </component>
   <component name="RunManager" selected="Playwright.Search Products Test">
     <configuration name="Product Details Page test" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
