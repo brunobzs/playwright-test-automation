@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Increase the number of workers" />
+    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add screenshot capture on failure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +51,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Playwright.Authentication Test.Registering a new user.executor": "Run",
+    "Playwright.Authentication Test.executor": "Run",
     "Playwright.Product Details Page test.Add a product to the cart.executor": "Run",
     "Playwright.Product Details Page test.View product details.executor": "Run",
     "Playwright.Product Details Page test.executor": "Run",
@@ -76,7 +79,32 @@
       <recent name="C:\Users\Bruno\Projetos\playwright-automation-tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Playwright.Search Products Test">
+  <component name="RunManager" selected="Playwright.Authentication Test">
+    <configuration name="Authentication Test" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/tests/login.spec.ts" />
+      <test-names>
+        <test-name value="Authentication Test" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Authentication Test.Registering a new user" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tests/login.spec.ts" />
+      <test-names>
+        <test-name value="Authentication Test" />
+        <test-name value="Registering a new user" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Product Details Page test" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
@@ -86,32 +114,6 @@
       <test-file value="$PROJECT_DIR$/tests/product-details.spec.ts" />
       <test-names>
         <test-name value="Product Details Page test" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Product Details Page test.Add a product to the cart" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/product-details.spec.ts" />
-      <test-names>
-        <test-name value="Product Details Page test" />
-        <test-name value="Add a product to the cart" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Product Details Page test.View product details" type="JavaScriptTestRunnerPlaywright" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <playwright-package value="$PROJECT_DIR$/node_modules/@playwright/test" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tests/product-details.spec.ts" />
-      <test-names>
-        <test-name value="Product Details Page test" />
-        <test-name value="View product details" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -142,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Playwright.Authentication Test" />
+        <item itemvalue="Playwright.Authentication Test.Registering a new user" />
         <item itemvalue="Playwright.Search Products Test" />
         <item itemvalue="Playwright.Search Products Test.Search without results" />
         <item itemvalue="Playwright.Product Details Page test" />
-        <item itemvalue="Playwright.Product Details Page test.View product details" />
-        <item itemvalue="Playwright.Product Details Page test.Add a product to the cart" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +265,47 @@
       <option name="project" value="LOCAL" />
       <updated>1735007428316</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735007467764</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1735007467764</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735007671416</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735007671416</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add screenshot capture on failure">
+      <option name="closed" value="true" />
+      <created>1735007819720</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735007819720</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add screenshot capture on failure">
+      <option name="closed" value="true" />
+      <created>1735008129514</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1735008129514</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add screenshot capture on failure">
+      <option name="closed" value="true" />
+      <created>1735010160064</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1735010160064</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +340,8 @@
     <MESSAGE value="Add a README" />
     <MESSAGE value="Fix: Command to run test" />
     <MESSAGE value="Increase the number of workers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Increase the number of workers" />
+    <MESSAGE value="Add screenshot capture on failure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add screenshot capture on failure" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -12,7 +12,7 @@ test.describe('Search Products Test', () => {
   });
 
   test('Search for valid keyword', async ({ page }) => {
-    const keyword = 't-shirt';
+    const keyword: string = 't-shirt';
     // Search by keyword
     await searchPage.searchByKeyword({ page, keyword });
 
@@ -21,7 +21,10 @@ test.describe('Search Products Test', () => {
   });
 
   test('Search without results', async ({ page }) => {
-    await searchPage.searchByKeyword({ page, keyword: 'motorcycle' });
+    await searchPage.searchByKeyword({
+      page,
+      keyword: 'motorcycle'
+    });
 
     // Validate the search result
     const noticeMessage = page.locator(searchPage.noticeMessage)
