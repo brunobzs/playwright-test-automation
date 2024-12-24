@@ -1,8 +1,6 @@
-import {test, expect, Locator} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import CreateAccountPage from "../page-objects/create-account.page";
 import LoginPage from "../page-objects/login.page";
-import {s} from "@faker-js/faker/dist/airline-BnpeTvY9";
-import {json} from "node:stream/consumers";
 
 const createAccountPage = CreateAccountPage;
 const loginPage = LoginPage;
@@ -63,7 +61,8 @@ test.describe('Authentication Test', () => {
     const fullNameFromAPI: string = body.customer.fullname;
     expect(fullNameFromAPI).toBe(fullName);
 
-    await page.locator(createAccountPage.successMessage).waitFor({ state: 'visible' });
-    await expect(page.locator(createAccountPage.successMessage)).toContainText('Thank you for registering with Main Website Store.');
+    const successMessage = page.locator(createAccountPage.successMessage);
+    await successMessage.waitFor({ state: 'visible' });
+    await expect(successMessage).toContainText('Thank you for registering with Main Website Store.');
   })
 });

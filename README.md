@@ -41,7 +41,7 @@ npx playwright install
 
 4. **Run the tests**:
 
-- To open the Cypress interface:
+- To open the Playwright interface:
 
 ```bash
 npx playwright test --ui

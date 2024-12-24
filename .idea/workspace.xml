@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Create login tests">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Increase the number of workers" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,7 +199,71 @@
       <option name="project" value="LOCAL" />
       <updated>1734954354084</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add a README">
+      <option name="closed" value="true" />
+      <created>1735004955437</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735004955437</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add a README">
+      <option name="closed" value="true" />
+      <created>1735004984285</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735004984285</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add a README">
+      <option name="closed" value="true" />
+      <created>1735005061401</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735005061401</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix: Command to run test">
+      <option name="closed" value="true" />
+      <created>1735005164849</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735005164849</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735005288062</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735005288062</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735006420941</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735006420941</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735006654878</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735006654878</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Increase the number of workers">
+      <option name="closed" value="true" />
+      <created>1735007428316</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735007428316</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +295,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reorganize folders" />
     <MESSAGE value="Create login tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create login tests" />
+    <MESSAGE value="Add a README" />
+    <MESSAGE value="Fix: Command to run test" />
+    <MESSAGE value="Increase the number of workers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Increase the number of workers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
