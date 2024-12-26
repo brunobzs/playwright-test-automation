@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add screenshot capture on failure">
+    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add test-results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,32 +48,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Playwright.Authentication Test.Registering a new user.executor": "Run",
-    "Playwright.Authentication Test.executor": "Run",
-    "Playwright.Product Details Page test.Add a product to the cart.executor": "Run",
-    "Playwright.Product Details Page test.View product details.executor": "Run",
-    "Playwright.Product Details Page test.executor": "Run",
-    "Playwright.Product Details Page test.should be able to add a product to the cart.executor": "Run",
-    "Playwright.Search Products Test.Search without results.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Bruno/Projetos/playwright-automation-tests",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\Aqua 2024.3.1\\plugins\\javascript-base\\jsLanguageServicesImpl\\external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Playwright.Authentication Test.Registering a new user.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Authentication Test.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Product Details Page test.Add a product to the cart.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Product Details Page test.View product details.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Product Details Page test.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Product Details Page test.should be able to add a product to the cart.executor&quot;: &quot;Run&quot;,
+    &quot;Playwright.Search Products Test.Search without results.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/Projetos/playwright-automation-tests&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\Aqua 2024.3.1\\plugins\\javascript-base\\jsLanguageServicesImpl\\external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Bruno\Projetos\playwright-automation-tests" />
@@ -305,7 +306,31 @@
       <option name="project" value="LOCAL" />
       <updated>1735010160064</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add screenshot capture on failure">
+      <option name="closed" value="true" />
+      <created>1735041512202</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1735041512202</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Add test-results">
+      <option name="closed" value="true" />
+      <created>1735214489509</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1735214489509</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add test-results">
+      <option name="closed" value="true" />
+      <created>1735214699569</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735214699569</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,7 +366,8 @@
     <MESSAGE value="Fix: Command to run test" />
     <MESSAGE value="Increase the number of workers" />
     <MESSAGE value="Add screenshot capture on failure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add screenshot capture on failure" />
+    <MESSAGE value="Add test-results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test-results" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
