@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add test-results">
+    <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add Jenkinsfile for CI pipeline">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Playwright.Authentication Test" />
-        <item itemvalue="Playwright.Authentication Test.Registering a new user" />
         <item itemvalue="Playwright.Search Products Test" />
         <item itemvalue="Playwright.Search Products Test.Search without results" />
         <item itemvalue="Playwright.Product Details Page test" />
+        <item itemvalue="Playwright.Authentication Test" />
+        <item itemvalue="Playwright.Authentication Test.Registering a new user" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +331,111 @@
       <option name="project" value="LOCAL" />
       <updated>1735214699569</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add test-results">
+      <option name="closed" value="true" />
+      <created>1735388367296</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1735388367296</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736290408981</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1736290408981</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736290770261</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1736290770261</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736293586288</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1736293586288</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294061686</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294061686</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294189447</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294189447</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294231352</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294231352</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294511441</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294511441</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294560134</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294560134</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294822279</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294822279</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736294971684</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1736294971684</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736295285435</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1736295285435</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add Jenkinsfile for CI pipeline">
+      <option name="closed" value="true" />
+      <created>1736296310534</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1736296310534</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,7 +472,8 @@
     <MESSAGE value="Increase the number of workers" />
     <MESSAGE value="Add screenshot capture on failure" />
     <MESSAGE value="Add test-results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test-results" />
+    <MESSAGE value="Add Jenkinsfile for CI pipeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Jenkinsfile for CI pipeline" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
