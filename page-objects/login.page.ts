@@ -1,62 +1,30 @@
-import { Page } from 'playwright/test';
-import config from '../playwright.config';
+import { Page } from 'playwright';
 
-// INTERFACES -----------------------------------
-interface LoginParams {
-  page: Page;
-  email: string;
-  password: string;
-}
-// ----------------------------------------------
-
-class LoginPage {
-  get user(): { firstName: string, lastName: string, email: string, password: string } {
-    return {
-      "firstName": "User",
-      "lastName": "Test",
-      "email": "brunobzs+test@gmail.com",
-      "password": "Test1234"
-    }
-  }
-
-  get loginPanel(): string {
+class LogInPage {
+  get loginPanel() {
     return '.panel.header';
   }
 
-  get emailInput(): string {
+  get emailInput() {
     return '#email';
   }
 
-  get passwordInput(): string {
+  get passwordInput() {
     return '#pass';
   }
 
-  get signInButton(): string {
+  get signInButton() {
     return '#send2';
   }
 
-  get errorMessage(): string {
+  get errorMessage() {
     return '.message-error';
   }
 
-
-  // FUNCTIONS -----------------------------------
-
   /**
-   * Access the webpage
-   *
-   * @param {object} params
-   * @param {Page} params.page - Playwright page object
+   * Fill the login form and submit
    */
-  async accessWebpage({ page }: { page: Page }) {
-    const baseURL: string = config.use?.baseURL;
-
-    await page.goto(baseURL);
-  }
-
-  async login(params: LoginParams) {
-    const { page, email, password } = params;
-
+  async logIn({ page, email, password }: { page: Page, email: string, password: string }) {
     await page.waitForSelector(this.loginPanel, { state: 'visible' });
     await page.locator(this.loginPanel).locator('a').filter({ hasText: 'Sign In' }).click();
     await page.waitForSelector(this.emailInput, { state: 'visible' });
@@ -67,4 +35,4 @@ class LoginPage {
   }
 }
 
-export default new LoginPage();
+export default new LogInPage();

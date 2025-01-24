@@ -1,33 +1,22 @@
 import { test, expect } from '@playwright/test';
-import LoginPage from "../page-objects/login.page";
-import SearchPage from '../page-objects/search-product.page';
-
-const loginPage = LoginPage;
-const searchPage = SearchPage;
-
+import ProductPage from "../page-objects/product.page";
 
 test.describe('Search Products Test', () => {
   test.beforeEach(async ({ page }) => {
-    await loginPage.accessWebpage({ page });
+    await page.goto('');
   });
 
-  test('Search for valid keyword', async ({ page }) => {
-    const keyword: string = 't-shirt';
-    // Search by keyword
-    await searchPage.searchByKeyword({ page, keyword });
-
-    // Validate the search result
-    await searchPage.checkSearchResults({ page, keyword });
+  test('Search for valid keyword search should return one result', async ({ page }) => {
+    const keyword = 't-shirt';
+    await ProductPage.searchBy({ page, keyword }); // Search by keyword
+    await ProductPage.checkSearchResults({ page, keyword }); // Validate the search result
   });
 
-  test('Search without results', async ({ page }) => {
-    await searchPage.searchByKeyword({
-      page,
-      keyword: 'motorcycle'
-    });
+  test('Search for a invalid keyword search should not return results', async ({ page }) => {
+    await ProductPage.searchBy({ page, keyword: 'motorcycle' });
 
     // Validate the search result
-    const noticeMessage = page.locator(searchPage.noticeMessage)
+    const noticeMessage = page.locator(ProductPage.noticeMessage)
     await expect(noticeMessage).toBeVisible();
     await expect(noticeMessage).toContainText('Your search returned no results.');
   });

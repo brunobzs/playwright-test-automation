@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97df6f14-b88c-4d5e-b156-64c9cde3e22b" name="Changes" comment="Add Jenkinsfile for CI pipeline">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/playwright.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/playwright.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-objects/create-account.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/page-objects/create-account.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page-objects/login.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/page-objects/login.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/login.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/auth.spec.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +39,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:brunobzs/playwright-automation-tests.git&quot;,
+    &quot;url&quot;: &quot;git@github.com:brunobzs/playwright-test-automation.git&quot;,
     &quot;accountId&quot;: &quot;6daaad1d-f4b0-4209-82cb-04e36882fe46&quot;
   }
 }</component>
@@ -63,7 +67,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/Projetos/playwright-automation-tests&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/Projetos/playwright-test-automation&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
