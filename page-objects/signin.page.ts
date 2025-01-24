@@ -46,7 +46,7 @@ class SignInPage {
   // FUNCTIONS ---------------------------------//
 
   /**
-   * Fill in the registration form
+   * Fill inputs fields in the registration form
    */
   async fillTheForm({ page, firstName, lastName, email, password }: { page: Page, firstName: string, lastName: string, email: string, password: string }) {
     const inputAndValues = [

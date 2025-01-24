@@ -63,9 +63,6 @@ class ProductPage {
 
   // FUNCTIONS --------------------------//
 
-  /**
-   * Check product details
-   */
   async checkProductDetails(page: Page) {
     const productDetails = {
       name: '',
@@ -108,9 +105,6 @@ class ProductPage {
     }
   }
 
-  /**
-   * Add a product to the cart
-   */
   async addProductToCart(page: Page) {
     // Select a product
     await page.waitForTimeout(4000);

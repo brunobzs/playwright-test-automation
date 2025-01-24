@@ -26,7 +26,8 @@ test.describe('Authentication', () => {
     });
 
     await page.waitForTimeout(1000);
-    await expect(page.locator(LogInPage.errorMessage)).toContainText('The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later');
+    await expect(page.locator(LogInPage.errorMessage))
+      .toContainText('The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later');
   });
 
   test('Successfully registers a new user', async ({ page }) => {
