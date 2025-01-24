@@ -41,23 +41,23 @@ class ProductPage {
     return '.counter-number';
   }
 
-  get searchInput(): string {
+  get searchInput() {
     return '#search';
   }
 
-  get resultPageTitle(): string {
+  get resultPageTitle() {
     return '[data-ui-id="page-title-wrapper"]'
   }
 
-  get relatedSearchTermsItems(): string {
+  get relatedSearchTermsItems() {
     return 'dl > dd';
   }
 
-  get productItems(): string {
+  get productItems() {
     return '.product-items > li';
   }
 
-  get noticeMessage(): string {
+  get noticeMessage() {
     return '.notice';
   }
 
