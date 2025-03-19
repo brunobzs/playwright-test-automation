@@ -1,76 +1,26 @@
-import { expect, Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 class ProductPage {
-  get productName() {
-    return '.product-item-name > a';
-  }
+  readonly pageTitle: string = '[data-ui-id="page-title-wrapper"]';
+  readonly productName: string = '.product-item-name > a';
+  readonly productPrice: string = '.price-wrapper';
+  readonly productRating: string = '.rating-result';
+  readonly productInfo: string = '.product-info-main';
+  readonly productSize: string = '.size';
+  readonly productColor: string = '.color';
+  readonly productAttributeOptions: string = '.swatch-option';
+  readonly productItems: string = '.product-items > li';
+  readonly chartLoader: string = '.loader > img';
+  readonly chartCounter: string = '.counter-number';
+  readonly searchInput: string = '#search';
+  readonly noticeMessage: string = '.notice';
 
-  get productPrice() {
-    return '.price-wrapper';
-  }
+  constructor(readonly page: Page) {}
 
-  get productRating() {
-    return '.rating-result';
-  }
-
-  get productPageTitle() {
-    return '[data-ui-id="page-title-wrapper"]'
-  }
-
-  get productInfo() {
-    return '.product-info-main';
-  }
-
-  get size() {
-    return '.size';
-  }
-
-  get color() {
-    return '.color';
-  }
-
-  get attributeOptions() {
-    return '.swatch-option';
-  }
-
-  get chartLoader() {
-    return '.loader > img';
-  }
-
-  get cartCounter() {
-    return '.counter-number';
-  }
-
-  get searchInput() {
-    return '#search';
-  }
-
-  get resultPageTitle() {
-    return '[data-ui-id="page-title-wrapper"]'
-  }
-
-  get relatedSearchTermsItems() {
-    return 'dl > dd';
-  }
-
-  get productItems() {
-    return '.product-items > li';
-  }
-
-  get noticeMessage() {
-    return '.notice';
-  }
-
-  // FUNCTIONS --------------------------//
-
-  async checkProductDetails(page: Page) {
-    const productDetails = {
-      name: '',
-      price: '',
-      rating: ''
-    }
+  async checkProductDetails() {
+    const productDetails = { name: '', price: '', rating: '' }
     const details = [this.productName, this.productPrice, this.productRating];
-    const productItem = page.locator(this.productItems).first();
+    const productItem = this.page.locator(this.productItems).first();
 
     // Get product details
     for (const detail of details) {
@@ -87,66 +37,59 @@ class ProductPage {
       }
     }
 
-    // Click on the product
-    await productItem.click();
+    await productItem.click(); // Click on the product
 
     const productReference = productDetails.name.toLowerCase().replace(/ /g, '-');
-    expect(page.url()).toContain(productReference);
+    expect(this.page.url()).toContain(productReference);
 
     const detailsAndValues = [
-      { detail: this.productPageTitle, value: productDetails.name },
+      { detail: this.pageTitle, value: productDetails.name },
       { detail: this.productPrice, value: productDetails.price },
       { detail: this.productRating, value: productDetails.rating },
     ];
 
     // Check product details
     for (const { detail, value } of detailsAndValues) {
-      await expect(page.locator(this.productInfo).locator(detail)).toContainText(value);
+      await expect(this.page.locator(this.productInfo).locator(detail)).toContainText(value);
     }
   }
 
-  async addProductToCart(page: Page) {
+  async addProductToCart() {
     // Select a product
-    await page.waitForTimeout(4000);
-    await page.locator(this.productItems).first().click();
-    await expect(page.locator(this.productPageTitle)).toBeVisible({timeout: 5000});
+    await this.page.waitForTimeout(4000);
+    await this.page.locator(this.productItems).first().click();
+    await expect(this.page.locator(this.pageTitle)).toBeVisible({timeout: 5000});
 
     // Select product attributes
-    const productInfoAttributes = page.locator(this.productInfo).locator(this.attributeOptions);
+    const productInfoAttributes = this.page.locator(this.productInfo).locator(this.productAttributeOptions);
     await productInfoAttributes.nth(3).click();
     await productInfoAttributes.nth(1).click();
-    await page.locator('button', { hasText: 'Add to Cart' }).first().click(); // Add product to cart
+    await this.page.locator('button', { hasText: 'Add to Cart' }).first().click(); // Add product to cart
   }
 
-  /**
-   * Check if the product was added to the cart
-   */
-  async checkChartCounter(page: Page) {
-    await expect(page.locator(this.chartLoader)).not.toBeVisible({ timeout: 5000 });
-    expect(page.locator(this.cartCounter)).not.toBe('0');
+  async checkChartCounter() {
+    await expect(this.page.locator(this.chartLoader)).not.toBeVisible({ timeout: 5000 });
+    expect(this.page.locator(this.chartCounter)).not.toBe('0');
   }
 
-  /**
-   * Search by keyword
-   */
-  async searchBy({ page, keyword }:  { page: Page; keyword: string; }) {
-    await page.locator(this.searchInput).fill(keyword);
-    await page.locator(this.searchInput).press('Enter');
-    expect(page.url()).toContain(`result/?q=${keyword}`);
-    await expect(page.locator(this.resultPageTitle)).toContainText(keyword);
+  async searchBy({ keyword }:  { keyword: string; }) {
+    await this.page.locator(this.searchInput).fill(keyword);
+    await this.page.locator(this.searchInput).press('Enter');
+    expect(this.page.url()).toContain(`result/?q=${keyword}`);
+    await expect(this.page.locator(this.pageTitle)).toContainText(keyword);
   }
 
-  async checkSearchResults({ page, keyword }: { page: Page; keyword: string; }) {
-    const relatedSearchTerms = await page.locator(this.relatedSearchTermsItems).all()
-    for (const terms of relatedSearchTerms) {
-      const text = await terms.textContent();
-      expect(text.toLowerCase()).toContain(keyword);
+  async checkSearchResults({ success }: { success: boolean }) {
+    const products = await this.page.locator(this.productItems).all();
+    const noticeMessage = this.page.locator(this.noticeMessage)
+
+    if (success) {
+      expect(products.length).toBeGreaterThan(0);
+    } else {
+      await expect(noticeMessage).toBeVisible();
+      await expect(noticeMessage).toContainText('Your search returned no results.');
     }
-
-    // Check if the product items are listed
-    const products = await page.locator(this.productItems).all();
-    expect(products.length).toBeGreaterThan(0);
   }
 }
 
-export default new ProductPage();
+export default ProductPage;

@@ -1,7 +1,23 @@
 import { faker } from '@faker-js/faker';
 import { expect, Page } from "@playwright/test";
 
+interface RegisterNewUserParams {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
+
 class SignInPage {
+  readonly firstNameInput: string = '#firstname';
+  readonly lastNameInput: string = '#lastname';
+  readonly emailInput: string = '#email_address';
+  readonly passwordInput: string = '#password';
+  readonly passwordConfirmationInput: string = '#password-confirmation';
+  readonly passwordStrength: string = '#password-strength-meter';
+
+  constructor(readonly page: Page) {}
+
   get newUser() {
     return {
       firstName: faker.person.firstName(),
@@ -11,62 +27,34 @@ class SignInPage {
     }
   }
 
-  get pageTitle() {
-    return '[data-ui-id="page-title-wrapper"]';
-  }
-
-  get firstNameInput() {
-    return '#firstname';
-  }
-
-  get lastNameInput() {
-    return '#lastname';
-  }
-
-  get emailInput() {
-    return '#email_address';
-  }
-
-  get passwordInput() {
-    return '#password';
-  }
-
-  get passwordStrength() {
-    return '#password-strength-meter'
-  }
-
-  get passwordConfirmationInput() {
-    return '#password-confirmation';
-  }
-
-  get successMessage() {
-    return '[data-ui-id="message-success"]';
-  }
-
   // FUNCTIONS ---------------------------------//
 
-  /**
-   * Fill inputs fields in the registration form
-   */
-  async fillTheForm({ page, firstName, lastName, email, password }: { page: Page, firstName: string, lastName: string, email: string, password: string }) {
-    const inputAndValues = [
-      { selector: this.firstNameInput, value: firstName },
-      { selector: this.lastNameInput, value: lastName },
-      { selector: this.emailInput, value: email }
+  async registerNewUser(params: RegisterNewUserParams) {
+    const inputs = [
+      { input: this.firstNameInput, value: params.firstName },
+      { input: this.lastNameInput, value: params.lastName },
+      { input: this.emailInput, value: params.email },
+      { input: this.passwordInput, value: params.password },
+      { input: this.passwordConfirmationInput, value: params.password }
     ]
 
-    for (const { selector, value } of inputAndValues) {
-      await page.locator(selector).fill(value);
+    for (const { input, value } of inputs) {
+      await this.page.locator(input).fill(value);
     }
 
-    const passwordInputs = [this.passwordInput, this.passwordConfirmationInput];
-    for (const input of passwordInputs) {
-      await page.locator(input).fill(password);
+    const passwordStrength = await this.page.locator(this.passwordStrength).innerText()
+    expect(passwordStrength).not.toContain('Weak');
+  }
 
-      const passwordStrength = await page.locator(this.passwordStrength).innerText()
-      expect(passwordStrength).not.toContain('Weak');
-    }
+  async clickOnCreateAccount({ isButton }: { isButton: boolean }) {
+    return await this.page.locator(isButton ? 'button' : 'a', { hasText: 'Create an Account' }).first().click();
+  }
+
+  async successRegisterMessage() {
+    const successMessage = this.page.locator('[data-ui-id="message-success"]');
+    await successMessage.waitFor({ state: 'visible' });
+    await expect(successMessage).toContainText('Thank you for registering with Main Website Store.');
   }
 }
 
-export default new SignInPage();
+export default SignInPage;
