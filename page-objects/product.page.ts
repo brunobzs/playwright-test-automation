@@ -1,6 +1,12 @@
-import { expect, Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 
 class ProductPage {
+  readonly page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
+
   get productName() {
     return '.product-item-name > a';
   }
@@ -49,10 +55,6 @@ class ProductPage {
     return '[data-ui-id="page-title-wrapper"]'
   }
 
-  get relatedSearchTermsItems() {
-    return 'dl > dd';
-  }
-
   get productItems() {
     return '.product-items > li';
   }
@@ -63,14 +65,14 @@ class ProductPage {
 
   // FUNCTIONS --------------------------//
 
-  async checkProductDetails(page: Page) {
+  async checkProductDetails() {
     const productDetails = {
       name: '',
       price: '',
       rating: ''
     }
     const details = [this.productName, this.productPrice, this.productRating];
-    const productItem = page.locator(this.productItems).first();
+    const productItem = this.page.locator(this.productItems).first();
 
     // Get product details
     for (const detail of details) {
@@ -91,7 +93,7 @@ class ProductPage {
     await productItem.click();
 
     const productReference = productDetails.name.toLowerCase().replace(/ /g, '-');
-    expect(page.url()).toContain(productReference);
+    expect(this.page.url()).toContain(productReference);
 
     const detailsAndValues = [
       { detail: this.productPageTitle, value: productDetails.name },
@@ -101,52 +103,46 @@ class ProductPage {
 
     // Check product details
     for (const { detail, value } of detailsAndValues) {
-      await expect(page.locator(this.productInfo).locator(detail)).toContainText(value);
+      await expect(this.page.locator(this.productInfo).locator(detail)).toContainText(value);
     }
   }
 
-  async addProductToCart(page: Page) {
+  async addProductToCart() {
     // Select a product
-    await page.waitForTimeout(4000);
-    await page.locator(this.productItems).first().click();
-    await expect(page.locator(this.productPageTitle)).toBeVisible({timeout: 5000});
+    await this.page.waitForTimeout(4000);
+    await this.page.locator(this.productItems).first().click();
+    await expect(this.page.locator(this.productPageTitle)).toBeVisible({timeout: 5000});
 
     // Select product attributes
-    const productInfoAttributes = page.locator(this.productInfo).locator(this.attributeOptions);
+    const productInfoAttributes = this.page.locator(this.productInfo).locator(this.attributeOptions);
     await productInfoAttributes.nth(3).click();
     await productInfoAttributes.nth(1).click();
-    await page.locator('button', { hasText: 'Add to Cart' }).first().click(); // Add product to cart
+    await this.page.locator('button', { hasText: 'Add to Cart' }).first().click(); // Add product to cart
   }
 
-  /**
-   * Check if the product was added to the cart
-   */
-  async checkChartCounter(page: Page) {
-    await expect(page.locator(this.chartLoader)).not.toBeVisible({ timeout: 5000 });
-    expect(page.locator(this.cartCounter)).not.toBe('0');
+  async checkChartCounter() {
+    await expect(this.page.locator(this.chartLoader)).not.toBeVisible({ timeout: 5000 });
+    expect(this.page.locator(this.cartCounter)).not.toBe('0');
   }
 
-  /**
-   * Search by keyword
-   */
-  async searchBy({ page, keyword }:  { page: Page; keyword: string; }) {
-    await page.locator(this.searchInput).fill(keyword);
-    await page.locator(this.searchInput).press('Enter');
-    expect(page.url()).toContain(`result/?q=${keyword}`);
-    await expect(page.locator(this.resultPageTitle)).toContainText(keyword);
+  async searchBy({ keyword }:  { keyword: string; }) {
+    await this.page.locator(this.searchInput).fill(keyword);
+    await this.page.locator(this.searchInput).press('Enter');
+    expect(this.page.url()).toContain(`result/?q=${keyword}`);
+    await expect(this.page.locator(this.resultPageTitle)).toContainText(keyword);
   }
 
-  async checkSearchResults({ page, keyword }: { page: Page; keyword: string; }) {
-    const relatedSearchTerms = await page.locator(this.relatedSearchTermsItems).all()
-    for (const terms of relatedSearchTerms) {
-      const text = await terms.textContent();
-      expect(text.toLowerCase()).toContain(keyword);
+  async checkSearchResults({ success }: { success: boolean }) {
+    const products = await this.page.locator(this.productItems).all();
+    const noticeMessage = this.page.locator(this.noticeMessage)
+
+    if (success) {
+      expect(products.length).toBeGreaterThan(0);
+    } else {
+      await expect(noticeMessage).toBeVisible();
+      await expect(noticeMessage).toContainText('Your search returned no results.');
     }
-
-    // Check if the product items are listed
-    const products = await page.locator(this.productItems).all();
-    expect(products.length).toBeGreaterThan(0);
   }
 }
 
-export default new ProductPage();
+export default ProductPage;

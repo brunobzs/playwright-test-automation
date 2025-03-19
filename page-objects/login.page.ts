@@ -1,38 +1,48 @@
-import { Page } from 'playwright';
+import { Page, expect } from '@playwright/test';
 
 class LogInPage {
+  readonly page: Page;
+
+  constructor(page: Page) {
+    this.page = page;
+  }
+  
   get loginPanel() {
     return '.panel.header';
   }
 
-  get emailInput() {
-    return '#email';
+
+  async fillEmailInput(email: string) {
+    const emailInput = '#email';
+    await this.page.waitForSelector(emailInput, { state: 'visible' });
+    await this.page.fill(emailInput, email);
   }
 
-  get passwordInput() {
-    return '#pass';
+  async fillPasswordInput(password: string) {
+    const passwordInput = '[name="login[password]"]';
+    await this.page.waitForSelector(passwordInput, { state: 'visible' });
+    await this.page.fill(passwordInput, password);
   }
 
-  get signInButton() {
-    return '#send2';
+  async clickOnSignIn({ isButton }: { isButton: boolean }) {
+    if (isButton) {
+      return this.page.getByRole('button', { name: 'Sign In' }).click();
+    } else {
+      await this.page.waitForSelector(this.loginPanel, { state: 'visible' });
+      return this.page.locator(this.loginPanel).locator('a').filter({ hasText: 'Sign In' }).click();
+    }
   }
 
-  get errorMessage() {
-    return '.message-error';
+  async successLogInMessage() {
+    await this.page.waitForTimeout(2000);
+    await expect(this.page.locator(this.loginPanel).locator('.logged-in')).toContainText('Welcome, User Test!');
   }
 
-  /**
-   * Fill the login form and submit
-   */
-  async logIn({ page, email, password }: { page: Page, email: string, password: string }) {
-    await page.waitForSelector(this.loginPanel, { state: 'visible' });
-    await page.locator(this.loginPanel).locator('a').filter({ hasText: 'Sign In' }).click();
-    await page.waitForSelector(this.emailInput, { state: 'visible' });
-    await page.fill(this.emailInput, email);
-    await page.fill(this.passwordInput, password);
-    await page.click(this.signInButton);
-    await page.waitForTimeout(1000);
+  async errorLogInMessage() {
+    await this.page.waitForTimeout(1000);
+    await expect(this.page.locator('.message-error'))
+      .toContainText('The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later');
   }
 }
 
-export default new LogInPage();
+export default LogInPage;
